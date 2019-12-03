@@ -1,0 +1,13 @@
+<h1>Product Details</h1>
+<section class="selected-product">
+  <div class="container">
+    <legend>To delete a product the Qty must be 0</legend>
+    <p><strong>Name:</strong> {{ product?.name }}</p>
+    <p><strong>Qty:</strong>{{ product?.quantity }}</p>
+    <p><strong>Price:</strong> {{ product?.price|currency }}</p>
+  </div>
+  <div>
+    <button class="btn btn-primary" routerLink="/products">Back</button>|
+    <button class="btn btn-danger" (click)="onDelete(product)">Delete</button>
+  </div>
+</section>

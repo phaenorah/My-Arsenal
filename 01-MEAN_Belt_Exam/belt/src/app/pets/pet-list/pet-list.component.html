@@ -1,0 +1,26 @@
+<h1>Pet Shelter</h1>
+<h3>These pets are looking for a home!</h3>
+<strong><p><a routerLink="/pets/new">Add a pet to the shelter</a></p></strong>
+<section class="pets">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets" ng-repeat=" pet in pets | orderBy:'type'">
+        <td>{{ pet.name }}</td>
+        <td>{{ pet.type }}</td>
+        <td (click)="onEvent($event)">
+          <button class="btn btn-success" (click)="onSelect(pet)"
+          [routerLink]="pet._id"
+          (mouseenter)="onEnter(pet)">Details</button>|
+          <button class="btn btn-primary" [routerLink]="[pet._id, 'edit']">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

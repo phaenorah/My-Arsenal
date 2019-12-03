@@ -1,0 +1,15 @@
+<h1>Pet Shelter</h1>
+<strong><p><a routerLink="/pets">Home</a></p></strong>
+<section class="selected-pet">
+  <div class="container">
+    <legend>Details about {{ pet?.name }}</legend>
+    <p><strong>Type:</strong>{{ pet?.type }}</p>
+    <p><strong>Description:</strong> {{ pet?.description }}</p>
+    <p><strong>Skills: </strong>{{ pet?.skill1 }}</p>
+    <p><strong>Likes:</strong> {{pet?.numberOfLikes}}</p>
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)= "likeButtonClick()">Like this pet</button>|
+    <button class="btn btn-danger" (click)="onDelete(pet)">Adopt this pet!</button>
+  </div>
+</section>
