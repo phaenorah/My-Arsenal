@@ -17,6 +17,7 @@ export class PetService {
   getPets(): Observable<Pet[]> {
     return this.http.get<Pet[]>(this.baseUrl);
   }
+
   createPet(pet: Pet): Observable<Pet> {
     return this.http.post<Pet>(this.baseUrl, pet);
   }

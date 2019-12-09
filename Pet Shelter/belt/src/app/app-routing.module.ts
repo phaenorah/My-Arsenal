@@ -5,14 +5,14 @@ import * as fromPets from './pets';
 
 import { environment } from '../environments/environment';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 
 const enableTracing = false && !environment.production;
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'pets',
-    pathMatch: 'full',
+    component: HomeComponent,
   },
   {
     path: 'pets',

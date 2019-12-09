@@ -1,0 +1,29 @@
+<div *ngIf="registrationErrors.length">
+  <ul class="alert alert-danger">
+    <li *ngFor="let error of registrationErrors">{{ error }}</li>
+  </ul>
+</div>
+
+<h1>Register</h1>
+<div class="container">
+    <form
+      (submit)="onSubmit(register.value)"
+      #register="ngForm"
+      class="form-group"
+      autocomplete="off">
+      <div class="form-group">
+        <label for="">Username</label>
+        <input type="text" class="form-control" name="username" #name="ngModel" [(ngModel)]="user.username"/>
+      </div>
+      <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" class="form-control" name="email" #username="ngModel" [(ngModel)]="user.email"/>
+      </div>
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password"
+          minlength="8"/>
+      </div>
+      <button class='btn btn-primary' *ngIf="register.valid">Register</button>
+    </form>
+  </div>
