@@ -1,0 +1,6 @@
+<nav>
+  <ul>
+    <strong><h1 *ngIf="!isAuthed"><a routerLink="/">Welcome to Pet Shelter</a></h1></strong>
+    <li *ngIf="isAuthed"><button class="btn btn-danger"(click)="logout()">Logout</button></li>
+  </ul>
+</nav>

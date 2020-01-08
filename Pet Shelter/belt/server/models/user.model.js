@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const validator = require('validator');
-const bcryptjs =  require('bcrypt-nodejs');
+const bcryptjs =  require('bcryptjs');
 
 console.log('loading user model');
 

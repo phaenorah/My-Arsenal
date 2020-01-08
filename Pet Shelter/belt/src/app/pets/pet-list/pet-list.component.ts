@@ -17,8 +17,6 @@ export class PetListComponent implements OnInit {
   pets: Pet[] = [];
   selectedPet: Pet;
 
-  isAuthed = false;
-
   constructor(
     private petService: PetService,
     private readonly router: Router,
@@ -53,16 +51,4 @@ export class PetListComponent implements OnInit {
     console.log('eventing');
     event.stopPropagation();
   }
-
-  onLog() {
-    this.auth.isAuthed$.subscribe(authed => {
-      console.log('authed?', authed);
-      this.isAuthed = authed;
-    });
-  }
-
-  logout() {
-    this.auth.logout().subscribe(() => this.router.navigateByUrl('/'));
-  }
-
 }
