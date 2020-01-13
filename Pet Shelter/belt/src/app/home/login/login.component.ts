@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(user).subscribe({
       next: loggedUser => {
         console.log('logged user', loggedUser);
-        this.router.navigateByUrl('books');
+        this.router.navigateByUrl('pets');
       },
       error: error => this.handleErrors(error.error),
     });

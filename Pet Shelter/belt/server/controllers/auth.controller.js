@@ -1,5 +1,6 @@
-const User = require('mongoose').model('User');
 const { Http } = require('@status/codes');
+
+const User = require('mongoose').model('User');
 
 module.exports = {
   login(request, response) {
@@ -7,12 +8,15 @@ module.exports = {
 
     User.findOne({ email })
       .then(user => {
+        console.log('user password', User.validatePassword(password, user.password));
         return User.validatePassword(password, user.password)
-          .then(isValid => {
+        .then(isValid => {
+          console.log("log user");
             if (!isValid) {
               throw new Error();
             }
             // login
+            console.log('not get here');
             completeLogin(request, response, user);
           });
       })

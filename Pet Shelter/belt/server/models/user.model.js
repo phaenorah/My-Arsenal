@@ -49,7 +49,7 @@ UserSchema.pre('validate', function (next) {
 });
 
 UserSchema.static('validatePassword', function (candidatePassword, hashedPassword) {
-  bcryptjs.compare(candidatePassword, hashedPassword)
+  return bcryptjs.compare(candidatePassword, hashedPassword)
 });
 
 module.exports = mongoose.model('User', UserSchema);
