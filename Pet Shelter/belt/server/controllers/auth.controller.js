@@ -8,7 +8,6 @@ module.exports = {
 
     User.findOne({ email })
       .then(user => {
-        console.log('user password', User.validatePassword(password, user.password));
         return User.validatePassword(password, user.password)
         .then(isValid => {
           console.log("log user");
